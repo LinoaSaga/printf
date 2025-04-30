@@ -6,17 +6,24 @@
 /*   By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:33:20 by ljudd             #+#    #+#             */
-/*   Updated: 2025/04/29 14:28:49 by ljudd            ###   ########.fr       */
+/*   Updated: 2025/04/30 12:49:42 by ljudd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 /* function to write a char and increment the total written counter*/
 void	ft_putcharf(char c, int	*res)
 {
 	write(1, &c, 1);
 	(*res)++;
+}
+
+/* function to write n times a char and increment the total written counter*/
+void	ft_putcharfn(char c, int *res, int n)
+{
+	while (n-- > 0)
+		ft_putcharf(c, res);
 }
 
 /* function to handle the conversion specifiers */
@@ -91,8 +98,43 @@ int	ft_printf(const char *s, ...)
 	printf("%0d\n", 456);
 }*/
 
-int	main(void)
+/*int	main(void)
 {
+	printf("%d\n", (int)ft_strlen("ok"));
 	printf("%3c\n", 'c');
-	printf("%-8c\n", 'c');
-}
+	ft_printf("%3c\n", 'c');
+	printf("%-5c\n", 'c');
+	ft_printf("%-5c\n", 'c');
+	printf("%c\n", 'c');
+	ft_printf("%c\n", 'c');
+}*/
+
+/*int	main(void)
+{
+	printf("%s\n", "salut");
+	ft_printf("%s\n", "salut");
+	printf("%.2s\n", "salut");
+	ft_printf("%.2s\n", "salut");
+	printf("%.8s\n", "salut");
+	ft_printf("%.8s\n", "salut");
+	printf("%10.8s\n", "salut");
+	ft_printf("%10.8s\n", "salut");
+	printf("%10.2s\n", "salut");
+	ft_printf("%10.2s\n", "salut");
+	printf("%-10.2s\n", "salut");
+	ft_printf("%-10.2s\n", "salut");
+	printf("%-10.15s\n", "salut");
+	ft_printf("%-10.15s\n", "salut");
+	printf("%2.4s\n", "salut");
+	ft_printf("%2.4s\n", "salut");
+}*/
+
+/*int	main(void)
+{
+	char	*s = "test";
+	
+	printf("%p\n", s);
+	printf("%-p\n", s);
+	printf("%30p\n", s);
+	printf("%-30p\n", s);
+}*/

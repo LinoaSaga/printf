@@ -6,13 +6,13 @@
 /*   By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 12:01:17 by ljudd             #+#    #+#             */
-/*   Updated: 2025/04/29 13:27:34 by ljudd            ###   ########.fr       */
+/*   Updated: 2025/04/30 12:50:12 by ljudd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* Functions related to the type t_printf part 1*/
 
-#include "printf.h"
+#include "ft_printf.h"
 
 /* Function to initialize the t_printf*/
 void	ft_printf_init(t_printf *to_print)

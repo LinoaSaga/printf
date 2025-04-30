@@ -6,13 +6,13 @@
 /*   By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 12:01:21 by ljudd             #+#    #+#             */
-/*   Updated: 2025/04/29 13:18:25 by ljudd            ###   ########.fr       */
+/*   Updated: 2025/04/30 12:50:09 by ljudd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* Functions related to the type t_printf part 2*/
 
-#include "printf.h"
+#include "ft_printf.h"
 
 /* Boolean function to indicate if the character is a conversion*/
 /* specifier*/
@@ -44,21 +44,21 @@ void	(*ft_printf_getconv(const char **s))(va_list *a, int *b, t_printf c)
 
 	f = NULL;
 	if (**s == 'c')
-		return (f);
+		f = &ft_printf_writec;
 	else if (**s == 's')
-		return (f);
+		f = &ft_printf_writes;
 	else if (**s == 'p')
-		return (f);
+		f = &ft_printf_writep;
 	else if (**s == 'd')
 		f = &ft_printf_writed;
 	if (**s == 'i')
-		return (f);
+		f = &ft_printf_writei;
 	else if (**s == 'u')
-		return (f);
+		f = &ft_printf_writeu;
 	else if (**s == 'x')
-		return (f);
+		f = &ft_printf_writexl;
 	else if (**s == 'X')
-		return (f);
+		f = &ft_printf_writexu;
 	(*s)++;
 	return (f);
 }
