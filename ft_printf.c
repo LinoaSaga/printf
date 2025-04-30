@@ -6,7 +6,7 @@
 /*   By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:33:20 by ljudd             #+#    #+#             */
-/*   Updated: 2025/04/29 13:30:46 by ljudd            ###   ########.fr       */
+/*   Updated: 2025/04/29 14:28:49 by ljudd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_printf(const char *s, ...)
 	return (res);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	ft_printf("test %% ok\n", "aa", 45);
 	ft_printf("test %d ok\n", 'b');
@@ -77,4 +77,22 @@ int	main(void)
 	ft_printf("test %--#6.6d ok\n", 'b');
 	ft_printf("test %z ok\n", 'b');
 	ft_printf("test %--#6.6d ok %--#8.6d\n", 'b', 'c');
+}*/
+
+/*int	main(void)
+{
+	printf("%1.8d\n", 456);
+	printf("%4.3d\n", 456);
+	printf("%5.1d\n", 456);
+	printf("%3.3d\n", 456);
+	printf("%8.6d\n", 456);
+	printf("%-8.6d\n", 456);
+	printf("%08d\n", 456);
+	printf("%0d\n", 456);
+}*/
+
+int	main(void)
+{
+	printf("%3c\n", 'c');
+	printf("%-8c\n", 'c');
 }
