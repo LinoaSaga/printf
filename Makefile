@@ -6,7 +6,7 @@
 #    By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/24 09:37:05 by ljudd             #+#    #+#              #
-#    Updated: 2025/04/30 14:23:38 by ljudd            ###   ########.fr        #
+#    Updated: 2025/04/30 15:30:31 by ljudd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,12 @@ CFLAGS			= -Wall -Wextra -Werror
 NAME			= test
 #NAME			= libftprintf.a
 SOURCES			= ft_printf.c \
+	ft_printf_utils.c \
 	ft_printf_type1.c \
 	ft_printf_type2.c \
-	ft_printf_conv1.c \
-	ft_printf_conv2.c
+	ft_printf_convc.c \
+	ft_printf_convs.c \
+	ft_printf_convp.c
 HEADER			= ft_printf.h
 INCLUDES		= ft_printf.h -Ilibft
 OBJECTS			= $(SOURCES:.c=.o)

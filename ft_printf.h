@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 09:12:10 by ljudd             #+#    #+#             */
-/*   Updated: 2025/04/30 12:49:33 by ljudd            ###   ########.fr       */
+/*   Updated: 2025/04/30 15:34:21 by ljudd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,14 @@ typedef struct s_printf
 	int		precision;	
 }	t_printf;
 
+/* ft_printf_utils.c*/
+void	ft_printf_putchar(char c, int	*res);
+void	ft_printf_putcharn(char c, int *res, int n);
+void	ft_printf_putstrc(char *s, int *res);
+
 /* printf.c*/
-int		ft_printf(const char *s, ...);
-void	ft_putcharfn(char c, int *res, int n);
 void	ft_printf_core(const char **s, va_list *args, int *n_print);
-void	ft_putcharf(char c, int	*res);
+int		ft_printf(const char *s, ...);
 
 /* ft_printf_type1.c*/
 void	ft_printf_init(t_printf *to_print);

@@ -6,27 +6,13 @@
 /*   By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:33:20 by ljudd             #+#    #+#             */
-/*   Updated: 2025/04/30 12:49:42 by ljudd            ###   ########.fr       */
+/*   Updated: 2025/04/30 15:17:28 by ljudd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/* function to write a char and increment the total written counter*/
-void	ft_putcharf(char c, int	*res)
-{
-	write(1, &c, 1);
-	(*res)++;
-}
-
-/* function to write n times a char and increment the total written counter*/
-void	ft_putcharfn(char c, int *res, int n)
-{
-	while (n-- > 0)
-		ft_putcharf(c, res);
-}
-
-/* function to handle the conversion specifiers */
+/* function to handle the % */
 void	ft_printf_core(const char **s, va_list *args, int *n_print)
 {
 	t_printf	to_print;
@@ -55,14 +41,14 @@ int	ft_printf(const char *s, ...)
 		{
 			if (*(++s) == '%')
 			{
-				ft_putcharf('%', &res);
+				ft_printf_putchar('%', &res);
 				s++;
 			}
 			else
 				ft_printf_core(&s, &args, &res);
 		}
 		else
-			ft_putcharf(*(s++), &res);
+			ft_printf_putchar(*(s++), &res);
 	}
 	va_end(args);
 	return (res);
@@ -129,12 +115,12 @@ int	ft_printf(const char *s, ...)
 	ft_printf("%2.4s\n", "salut");
 }*/
 
-/*int	main(void)
+int	main(void)
 {
-	char	*s = "test";
+	char	*s = NULL;
 	
 	printf("%p\n", s);
 	printf("%-p\n", s);
 	printf("%30p\n", s);
 	printf("%-30p\n", s);
-}*/
+}
