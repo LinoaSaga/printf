@@ -6,7 +6,7 @@
 /*   By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:33:20 by ljudd             #+#    #+#             */
-/*   Updated: 2025/05/01 14:27:05 by ljudd            ###   ########.fr       */
+/*   Updated: 2025/05/01 16:01:01 by ljudd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int	ft_printf(const char *s, ...)
 	va_list	args;
 
 	res = 0;
+	if (!s)
+		return (-1);
 	va_start(args, s);
 	while (*s)
 	{
@@ -213,3 +215,11 @@ int	ft_printf(const char *s, ...)
 	printf("%04d\n", 9);
 	ft_printf("%04d\n", 9);
 }*/
+
+int	main(void)
+{
+	printf("%d\n", printf(0));
+	printf("%d\n", ft_printf(0));
+	printf("%d\n", printf("%-+12.6d\n", 534186123));
+	printf("%d\n", ft_printf("%-+12.6d\n", 534186123));
+}
