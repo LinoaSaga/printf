@@ -6,7 +6,7 @@
 /*   By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 15:03:16 by ljudd             #+#    #+#             */
-/*   Updated: 2025/05/01 12:09:41 by ljudd            ###   ########.fr       */
+/*   Updated: 2025/05/01 14:31:34 by ljudd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,10 @@ void	ft_printf_writes(va_list *args, int *n_print, t_printf to_print)
 	char	*s;
 
 	s = va_arg(*args, char *);
-	if (!s)
-	{
-		to_print.precision = -1;
-		ft_printf_putstrc("(null)", n_print);
-	}
+	if (!s && (to_print.precision == -1 || to_print.precision > 5))
+		ft_printf_writes_sub("(null)", n_print, to_print);
+	else if (!s)
+		ft_printf_writes_sub("", n_print, to_print);
 	else
 		ft_printf_writes_sub(s, n_print, to_print);
 }

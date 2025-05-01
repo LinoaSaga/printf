@@ -6,7 +6,7 @@
 /*   By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:33:20 by ljudd             #+#    #+#             */
-/*   Updated: 2025/05/01 12:52:56 by ljudd            ###   ########.fr       */
+/*   Updated: 2025/05/01 14:27:05 by ljudd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,8 @@ int	ft_printf(const char *s, ...)
 	{
 		if (*s == '%')
 		{
-			if (*(++s) == '%')
-			{
-				ft_printf_putchar('%', &res);
-				s++;
-			}
-			else
-				ft_printf_core(&s, &args, &res);
+			s++;
+			ft_printf_core(&s, &args, &res);
 		}
 		else
 			ft_printf_putchar(*(s++), &res);

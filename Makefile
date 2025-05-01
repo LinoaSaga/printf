@@ -6,7 +6,7 @@
 #    By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/24 09:37:05 by ljudd             #+#    #+#              #
-#    Updated: 2025/05/01 12:53:05 by ljudd            ###   ########.fr        #
+#    Updated: 2025/05/01 14:17:54 by ljudd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SOURCES			= ft_printf.c \
 	ft_printf_convi.c \
 	ft_printf_convu.c \
 	ft_printf_convxl.c \
-	ft_printf_convxu.c
+	ft_printf_convxu.c \
+	ft_printf_convpct.c
 HEADER			= ft_printf.h
 INCLUDES		= ft_printf.h -Ilibft
 OBJECTS			= $(SOURCES:.c=.o)

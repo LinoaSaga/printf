@@ -6,7 +6,7 @@
 /*   By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 09:12:10 by ljudd             #+#    #+#             */
-/*   Updated: 2025/05/01 11:42:26 by ljudd            ###   ########.fr       */
+/*   Updated: 2025/05/01 14:42:59 by ljudd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ void	ft_printf_writei(va_list *args, int *n_print, t_printf to_print);
 void	ft_printf_writeu(va_list *args, int *n_print, t_printf to_print);
 void	ft_printf_writexl(va_list *args, int *n_print, t_printf to_print);
 void	ft_printf_writexu(va_list *args, int *n_print, t_printf to_print);
+void	ft_printf_writepct(va_list *args, int *n_print, t_printf to_print);
 
 #endif
