@@ -6,7 +6,7 @@
 /*   By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:33:20 by ljudd             #+#    #+#             */
-/*   Updated: 2025/04/30 15:17:28 by ljudd            ###   ########.fr       */
+/*   Updated: 2025/05/01 11:44:47 by ljudd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,14 +113,51 @@ int	ft_printf(const char *s, ...)
 	ft_printf("%-10.15s\n", "salut");
 	printf("%2.4s\n", "salut");
 	ft_printf("%2.4s\n", "salut");
+	printf("%2.4s\n", (char *) NULL);
+	ft_printf("%2.4s\n", (char *) NULL);
 }*/
+
+/*int	main(void)
+{
+	char	*s = "test";
+	
+	printf("%p\n", s);
+	ft_printf("%p\n", s);
+	printf("%-p\n", s);
+	ft_printf("%-p\n", s);
+	printf("%30p\n", s);
+	ft_printf("%30p\n", s);
+	printf("%-30p\n", s);
+	ft_printf("%-30p\n", s);
+}*/
+
+/*int	main(void)
+{
+	printf("%d\n", 5);
+	ft_printf("%d\n", 5);
+	printf("%-+12.6d\n", 534);
+	ft_printf("%-+12.6d\n", 534);
+	printf("%-+12.6d\n", 534186123);
+	ft_printf("%-+12.6d\n", 534186123);
+	printf("%-+12.6d\n", 0);
+	ft_printf("%-+12.6d\n", 0);
+	printf("%d\n", INT_MIN);
+	ft_printf("%d\n", INT_MIN);
+}*/
+
 
 int	main(void)
 {
-	char	*s = NULL;
-	
-	printf("%p\n", s);
-	printf("%-p\n", s);
-	printf("%30p\n", s);
-	printf("%-30p\n", s);
+	printf("%-10d\n", INT_MIN);
+	ft_printf("%-10d\n", INT_MIN);
+	printf("%-1u\n", 0);
+	ft_printf("%-1u\n", 0);
+	printf("%04d\n", -14);
+	ft_printf("%04d\n", -14);
+	printf("%05d\n", -15);
+	ft_printf("%05d\n", -15);
+	printf("%06d\n", -16);
+	ft_printf("%06d\n", -16);
+	printf("%010d\n", INT_MIN);
+	ft_printf("%010d\n", INT_MIN);
 }
