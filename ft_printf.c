@@ -6,7 +6,7 @@
 /*   By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:33:20 by ljudd             #+#    #+#             */
-/*   Updated: 2025/05/01 11:44:47 by ljudd            ###   ########.fr       */
+/*   Updated: 2025/05/01 12:52:56 by ljudd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,8 +145,7 @@ int	ft_printf(const char *s, ...)
 	ft_printf("%d\n", INT_MIN);
 }*/
 
-
-int	main(void)
+/*int	main(void)
 {
 	printf("%-10d\n", INT_MIN);
 	ft_printf("%-10d\n", INT_MIN);
@@ -160,4 +159,62 @@ int	main(void)
 	ft_printf("%06d\n", -16);
 	printf("%010d\n", INT_MIN);
 	ft_printf("%010d\n", INT_MIN);
-}
+}*/
+
+/*int	main(void)
+{
+	ft_printf("%5.8%\n");
+	printf("%5.8%\n");
+	ft_printf("%5.8%  \n");
+	printf("%5.8%  \n");
+	ft_printf("%-5%\n");
+	printf("%-5%\n");
+	ft_printf("%-05%\n");
+	printf("%-05%\n");
+	ft_printf("%.s\n", (char *) NULL);
+	printf("%.s\n", (char *) NULL);
+	ft_printf("%.03s\n", (char *) NULL);
+	printf("%.03s\n", (char *) NULL);
+	ft_printf("%3.s\n", (char *) NULL);
+	printf("%3.s\n", (char *) NULL);
+	ft_printf("%10.s\n", (char *) NULL);
+	printf("%10.s\n", (char *) NULL);
+	ft_printf("%-3.s\n", (char *) NULL);
+	printf("%-3.s\n", (char *) NULL);
+	ft_printf("%-8.s\n", (char *) NULL);
+	printf("%-8.s\n", (char *) NULL);
+	ft_printf("%3.1s\n", (char *) NULL);
+	printf("%3.1s\n", (char *) NULL);
+	ft_printf("%9.1s\n", (char *) NULL);
+	printf("%9.1s\n", (char *) NULL);
+	ft_printf("%-3.1s\n", (char *) NULL);
+	printf("%-3.1s\n", (char *) NULL);
+	ft_printf("%-9.1s\n", (char *) NULL);
+	printf("%-9.1s\n", (char *) NULL);
+	ft_printf("%08.5i\n", 34);
+	printf("%08.5i\n", 34);
+	ft_printf("%010.5i\n", -216);
+	printf("%010.5i\n", -216);
+	ft_printf("%08.5i\n", 0);
+	printf("%08.5i\n", 0);
+	ft_printf("%08.3i\n", 8375);
+	printf("%08.3i\n", 8375);
+	ft_printf("%08.3i\n", -8473);
+	printf("%08.3i\n", -8473);
+	ft_printf("%.0i\n", 0);
+	printf("%.0i\n", 0);
+	ft_printf("%.i\n", 0);
+	printf("%.i\n", 0);
+	ft_printf("%.0u\n", 0);
+	printf("%.0u\n", 0);
+	ft_printf("%.u\n", 0);
+	printf("%.u\n", 0);
+	ft_printf("%10.u\n", 0);
+	printf("%10.u\n", 0);
+}*/
+
+/*int	main(void)
+{
+	printf("%04d\n", 9);
+	ft_printf("%04d\n", 9);
+}*/

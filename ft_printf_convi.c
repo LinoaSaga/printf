@@ -6,7 +6,7 @@
 /*   By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 08:39:09 by ljudd             #+#    #+#             */
-/*   Updated: 2025/05/01 11:48:43 by ljudd            ###   ########.fr       */
+/*   Updated: 2025/05/01 12:52:08 by ljudd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 static int	ft_printf_sized(int d, t_printf to_print)
 {
-	int	res;
-	int	sign;
+	int				res;
+	int				sign;
 	unsigned int	nb;
 
+	if (d == 0 && to_print.precision == 0)
+		return (0);
 	res = 1;
 	sign = 0;
 	if (d < 0 || to_print.flag_plus || to_print.flag_blank)
@@ -47,8 +49,8 @@ static void	ft_printf_putsignd(int d, int *n_print, t_printf to_print)
 
 static void	ft_printf_put0d(int d, int *n_print, t_printf to_print)
 {
-	int	n_zero;
-	int	size;
+	int				n_zero;
+	int				size;
 	unsigned int	nb;
 
 	size = 1;
@@ -80,17 +82,19 @@ void	ft_printf_writei(va_list *args, int *n_print, t_printf to_print)
 
 	d = va_arg(*args, int);
 	n_space = to_print.field_width - ft_printf_sized(d, to_print);
+	if (!(to_print.flag_minus)
+		&& (!to_print.flag_0 || to_print.precision != -1) && n_space > 0)
+		ft_printf_putcharn(' ', n_print, n_space);
+	ft_printf_putsignd(d, n_print, to_print);
 	if (!(to_print.flag_minus) && to_print.flag_0
 		&& to_print.precision == -1 && n_space > 0)
 		ft_printf_putcharn('0', n_print, n_space);
-	else if (!(to_print.flag_minus) && n_space > 0)
-		ft_printf_putcharn(' ', n_print, n_space);
-	ft_printf_putsignd(d, n_print, to_print);
 	nb = d;
 	if (d < 0)
 		nb = -((unsigned int) d);
 	ft_printf_put0d(nb, n_print, to_print);
-	ft_printf_putd(nb, n_print, "0123456789");
+	if (nb != 0 || to_print.precision != 0)
+		ft_printf_putd(nb, n_print, "0123456789");
 	if (to_print.flag_minus && n_space > 0)
 		ft_printf_putcharn(' ', n_print, n_space);
 }

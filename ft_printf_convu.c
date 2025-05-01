@@ -6,7 +6,7 @@
 /*   By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 08:39:15 by ljudd             #+#    #+#             */
-/*   Updated: 2025/05/01 11:32:40 by ljudd            ###   ########.fr       */
+/*   Updated: 2025/05/01 12:38:26 by ljudd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static int	ft_printf_sized(unsigned int nb, t_printf to_print)
 {
 	int	res;
 
+	if (nb == 0 && to_print.precision == 0)
+		return (0);
 	res = 1;
 	while (nb > 9)
 	{
@@ -63,7 +65,8 @@ void	ft_printf_writeu(va_list *args, int *n_print, t_printf to_print)
 	else if (!(to_print.flag_minus) && n_space > 0)
 		ft_printf_putcharn(' ', n_print, n_space);
 	ft_printf_put0d(nb, n_print, to_print);
-	ft_printf_putd(nb, n_print, "0123456789");
+	if (nb != 0 || to_print.precision != 0)
+		ft_printf_putd(nb, n_print, "0123456789");
 	if (to_print.flag_minus && n_space > 0)
 		ft_printf_putcharn(' ', n_print, n_space);
 }

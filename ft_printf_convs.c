@@ -6,7 +6,7 @@
 /*   By: ljudd <ljudd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 15:03:16 by ljudd             #+#    #+#             */
-/*   Updated: 2025/05/01 10:55:24 by ljudd            ###   ########.fr       */
+/*   Updated: 2025/05/01 12:09:41 by ljudd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_printf_writes(va_list *args, int *n_print, t_printf to_print)
 	if (!s)
 	{
 		to_print.precision = -1;
-		ft_printf_writes_sub("(null)", n_print, to_print);
+		ft_printf_putstrc("(null)", n_print);
 	}
 	else
 		ft_printf_writes_sub(s, n_print, to_print);
